@@ -1,0 +1,301 @@
+/* ========================================================
+                      header
+   ======================================================== */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+/* 🔄 ИЗМЕНЕНО: Контейнер для логотипа и текста */
+.header-logo {
+  display: flex;          /* Выстраивает картинку и текст в одну строку */
+  align-items: center;    /* Центрирует их по вертикали друг относительно друга */
+  gap: 10px;              /* Расстояние между картинкой и текстом */
+}
+
+/* Стили для картинки логотипа */
+.header-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* 🆕 ДОБАВЛЕНО: Стили для текста Lost & Found */
+.logo-text {
+  font-size: 18px;        /* Размер шрифта */
+  font-weight: bold;      /* Жирный текст */
+  color: #333333;         /* Темно-серый цвет текста */
+  font-family: sans-serif;/* Стандартный аккуратный шрифт (можно заменить на свой) */
+}
+
+/* Стили для блока уведомлений */
+.header-notifications {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Красный индикатор уведомлений */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ff3b30;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  padding-top: 60px;
+  margin: 0;
+}
+
+
+
+/* ========================================================
+                    нижняя навигация
+   ======================================================== */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Элемент вкладки */
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #8e8e93;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-size: 12px;
+  flex-grow: 1;
+  height: 100%;
+  transition: color 0.2s ease;
+}
+
+/* Иконка */
+.nav-icon {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+/* Активное (нажатое) состояние */
+.nav-item.active {
+  color: #007aff; /* Синий цвет в стиле iOS */
+}
+
+/* ========================================================
+                    badges
+   ======================================================== */
+   .profile-badges { 
+    
+    display: flex; 
+    gap: 8px; 
+     margin-top: 4px; }
+.badge { 
+    
+    font-size: 0.90rem; 
+    padding: 4px 10px; 
+    border-radius: 20px; 
+    font-weight: 500; }
+ .badge-blue { 
+    
+    background-color: #ffffff;
+     color: rgb(0, 0, 0); }
+ .badge-green { 
+    border-style: solid 1px;
+    border-color: rgb(71, 199, 39);
+    background-color:transparent;
+     color: rgb(71, 199, 39); }
+.badge-Blue { 
+    border-color: rgb(50, 117, 165);
+    background-color:transparent;
+     color: rgb(50, 117, 165); }
+.badge-outline { 
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    background-color: transparent; 
+    color: white; }
+.Lost { 
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    background-color: rgb(145, 36, 36); 
+    color: white; }
+.Found{
+     border: 1px solid rgba(255, 255, 255, 0.6); 
+    background-color: rgb(36, 112, 145); 
+    color: white;
+}
+
+/* ========================================================
+                    notification
+   ======================================================== */
+
+/* Notification button */
+.notification-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Small notification counter */
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #d48ca8;
+    color: white;
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Notification popup */
+.notification-panel {
+    position: fixed;
+    top: 75px;
+    right: 25px;
+    width: 330px;
+    max-width: calc(100vw - 30px);
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    display: none;
+    overflow: hidden;
+    color: #333;
+}
+
+.notification-panel.show {
+    display: block;
+}
+
+/* Header */
+.notification-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.notification-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.close-notifications {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+}
+
+/* Notification list */
+.notification-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background 0.2s;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item:hover {
+    background: #fff7fa;
+}
+
+.notification-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    background: #fbeaf0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-text h4 {
+    margin: 0 0 5px;
+    font-size: 13px;
+}
+
+.notification-text p {
+    margin: 0 0 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.notification-text span {
+    font-size: 11px;
+    color: #999;
+}
+
+@media (max-width: 480px) {
+    .notification-panel {
+        right: 10px;
+        top: 65px;
+    }
+}
+
+
+
+.card-box {
+    max-width: 100%; /* Ограничиваем ширину коробки, чтобы она не была на весь экран */
+    width: 100%;
+    margin: 40px auto; /* Центрируем коробку на странице */
+    background: #ffffff;
+    border: 1px solid rgb(220, 220, 220); /* Рамка вокруг коробки */
+    border-radius: 12px; /* Красивые скругленные углы */
+    padding: 24px; /* Внутренние отступы от краев коробки */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Легкая тень для эффекта объема */
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+/* Заголовок "My items" в левом верхнем углу коробки */
+.box-title {
+    margin: 0 0 20px 0; /* Отступ только снизу, чтобы отодвинуть табы */
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(30, 30, 30);
+    text-align: left; /* Строго слева */
+}

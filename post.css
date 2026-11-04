@@ -1,0 +1,97 @@
+
+    
+.post-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #555;
+}
+
+#post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+#post-title {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+#post-description,
+#post-location,
+#post-category,
+#post-date {
+    line-height: 1.6;
+    color: #555;
+    font-size: 18px;
+}
+
+#post-content h3 {
+    margin-top: 25px;
+}
+.divs{
+    width: 99%; /* Увеличили до 100% */
+    border-radius: 10px;
+  
+    border:2px solid ;
+    margin: 25px 0 0 0; /* Сместили вниз формы */
+    padding: 15px; /* Добавили закрывающие скобки и внутренний отступ */
+    font-size: 14px;
+    .contact-section {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f5f5f5;
+}
+
+#contact-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 13px 24px;
+    background: #252525;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+#contact-button:hover {
+    background: #444;
+}
+}
+.contact-section {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f5f5f5;
+    border-radius: 12px;
+}
+
+.contact-section h3 {
+    margin-bottom: 15px;
+}
+
+#contact-button {
+    display: inline-block;
+    padding: 13px 25px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#contact-button:hover {
+    background: #555;
+}

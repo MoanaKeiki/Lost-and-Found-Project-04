@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details | Campus Lost & Found</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="post.css">
+
+</head>
+<body> 
+
+    <main class="post-page">
+
+        <a href="mainpage.html" class="back-link">
+            ← Back to Main Paige
+        </a>
+
+        <div id="post-loading">Loading item...</div>
+
+<div id="post-content" style="display: none;">
+
+            <img id="post-image" src="" alt="Item photo">
+
+            <span id="post-status" class="badge"></span>
+             <h1 id="post-title"></h1>
+            <div class="divs">
+                 <h2>Location</h2>
+            <p id="post-location"></p>
+                <p id="post-date"></p>
+                <p id="post-category"></p>
+
+            </div>
+
+           
+            <div class="divs">
+                <h2>Description</h2>
+            <p id="post-description"></p>
+
+            </div>
+
+           <div class="contact-section">
+
+                <h3>Contact the Owner</h3>
+
+                <a id="contact-button" href="#" target="_blank">
+                    Contact Owner
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+
+
+    <script src="post.js"></script>
+
+</body>
+</html>

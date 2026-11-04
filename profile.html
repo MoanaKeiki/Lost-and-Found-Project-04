@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="profile.css">
+    <title>Document</title>
+</head>
+<body>
+<header class="main-header">
+  <!-- Логотип + Текст слева -->
+  <div class="header-logo">
+    <img src="logo.jpg" alt="Логотип"> <!-- Ваша картинка -->
+    <span class="logo-text">Lost & Found</span> <!-- 👈 Новый текст -->
+  </div>
+  
+  <!-- Уведомления справа -->
+  <button id="notificationBtn" class="notification-btn">
+    🔔
+    <span class="notification-count">0</span>
+</button>
+</header>
+
+    <div class="profile-card">
+        <!-- Блок с аватаркой / иконкой -->
+        <div class="profile-avatar">
+        <!-- Можно использовать тег <img> для фото или svg-иконку -->
+        <svg viewBox="0 0 24 24" class="avatar-icon">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+        </div>
+
+        <!-- Блок с текстовой информацией -->
+        <div class="profile-info">
+          <h2 class="profile-name" id="profile-name">Loading...</h2>
+          <p class="profile-email" id="profile-email">Loading...</p>
+       <div class="profile-badges">
+    <span class="badge badge-blue" id="profile-student-id">
+        Student
+    </span>
+    <span class="badge badge-outline" id="profile-verification">
+        ✓ Verified Student
+    </span>
+</div>
+    </div>
+    </div>
+  <!-- Главная коробка-контейнер//dAuGE6mH7$-K?pC -->
+<div class="card-box">
+    <!-- Заголовок в левом верхнем углу -->
+    <h2 class="box-title">My items</h2>
+
+    <div class="wrapper form-wrap">
+        <div class="tabs">
+            <h3 class="active-tab"><a class="active" href="#active-tab-content">Active</a></h3>
+            <h3 class="resolved-tab"><a href="#resolved-tab-content">Resolved</a></h3>
+        </div>
+
+        <div class="tabs-content">
+            <!-- КОНТЕНТ ВКЛАДКИ ACTIVE -->
+            <div id="active-tab-content" class="tab-pane active">
+               <div id="active-tab-content" class="tab-pane active">
+    <div class="items">
+        
+        <!-- Левая часть: весь текст -->
+        <div class="item-info">
+            
+            
+        </div>
+        
+       
+       
+             
+    </div>
+</div>
+
+
+               
+            </div>
+
+            
+            <div id="resolved-tab-content" class="tab-pane">
+                 <div class="items">
+        
+    
+        <div class="item-info">
+             
+        </div>
+        
+        
+       
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="index.html" method="get">
+    <button type="submit" class="button butt">Sign out</button>
+</form>
+    <nav class="bottom-nav">
+  <a href="mainpage.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">🔍</span>
+    <span class="nav-label">Search</span>
+  </a>
+  <a href="report.html" class="nav-item active" onclick="setActive(this)">
+    <span class="nav-icon">➕</span>
+    <span class="nav-label">Report</span>
+  </a>
+  <a href="profile.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label">Profile</span>
+  </a>
+</nav>
+
+<div class="notification-panel" id="notificationPanel">
+    <div class="notification-header">
+        <h3>Notifications</h3>
+        <button id="closeNotifications" class="close-notifications">&times;</button>
+    </div>
+
+    <div class="notification-list">
+        
+
+        <div class="notification-item">
+            <div class="notification-icon">🔔</div>
+            <div class="notification-text">
+                <h4>Welcome!</h4>
+                <p>Welcome to Lost and Found.</p>
+                <span>Yesterday</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+<script src="./index.js"></script>
+
+<script src="profile.js"></script>
+</body>
+</html>
+

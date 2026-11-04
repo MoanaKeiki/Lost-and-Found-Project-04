@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="mainpage.css">
+    <title>Document</title>
+</head>
+<style>
+.bottom-nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: #ffffff; 
+padding: 10px 0;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+.bottom-nav .nav-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: #666;
+transition: color 0.3s ease;
+}
+.bottom-nav .nav-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+.bottom-nav .nav-icon img {
+width: 28px; 
+height: 28px;
+object-fit: contain;
+transition: filter 0.3s ease;
+}
+
+.bottom-nav .nav-item:hover .nav-icon {
+transform: scale(0.85); 
+filter: drop-shadow(0 0 8px rgba(85, 101, 247, 0.8)); 
+}
+
+.bottom-nav .nav-label {
+font-size: 12px;
+margin-top: 4px;
+transition: color 0.3s ease;
+}
+
+.bottom-nav .nav-item.active,
+.bottom-nav .nav-item:hover {
+color: #5047f9; 
+}
+</style>
+<body>
+    <header class="main-header">
+  <!-- Логотип + Текст слева -->
+  <div class="header-logo">
+    <img src="logo.jpg" alt="Логотип"> <!-- Ваша картинка -->
+    <span class="logo-text">Lost & Found</span> <!-- 👈 Новый текст -->
+  </div>
+  
+  <!-- Уведомления справа -->
+  <button id="notificationBtn" class="notification-btn">
+    🔔
+    <span class="notification-count">0</span>
+</button>
+</header>
+<div class="standalone-search-container">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" placeholder="Search for lost items..." class="search-input">
+  </div>
+</div>
+<!-- Блок категорий (класс изменен на category-btn, а data-filter на data-category) -->
+<div class="filter-navigation"> 
+    <button class="category-btn active" data-category="all">All</button> 
+    <button class="category-btn" data-category="electronic">Electronic</button> 
+    <button class="category-btn" data-category="documents">Documents</button> 
+    <button class="category-btn" data-category="clothing">Clothing</button> 
+    <button class="category-btn" data-category="accessories">Accessories</button> 
+    <button class="category-btn" data-category="keys">Keys</button> 
+</div>
+
+<!-- Блок статусов (класс изменен на status-btn) -->
+<div class="filter-navigation">
+  <button class="status-btn active" data-filter="all">All</button>
+  <button class="status-btn" data-filter="lost">Lost</button>
+  <button class="status-btn" data-filter="found">Found</button>
+</div>
+
+<div id="items-container"></div>
+<p id="loading-message">Loading items...</p>
+
+
+
+<nav class="bottom-nav">
+<a href="mainpage.html" class="nav-item" onclick="setActive(this)">
+<span class="nav-icon"><img src="magnifier.png" alt="Search"></span>
+<span class="nav-label">Search</span>
+</a>
+<a href="report.html" class="nav-item active" onclick="setActive(this)">
+<span class="nav-icon"><img src="plus.png" alt="Report"></span>
+<span class="nav-label">Report</span>
+</a>
+<a href="profile.html" class="nav-item" onclick="setActive(this)">
+<span class="nav-icon"><img src="user.png" alt="Profile"></span>
+<span class="nav-label">Profile</span>
+</a>
+</nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+<script src="./read.js"></script>
+<script src="mainpage.js"></script>
+</body>
+</html>

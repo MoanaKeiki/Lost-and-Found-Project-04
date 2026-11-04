@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    font-family: sans-serif; /* Для лучшего отображения */
+}
+
+.wrapper h1 {
+    font-size: 15px;
+}
+
+.wrapper {
+    width: 420px;
+    background-color: white;
+    color: rgb(100, 100, 100);
+    border: 1px solid rgb(220, 220, 220); /* Сделали рамку мягче */
+    border-radius: 30px;
+    padding: 30px;
+    overflow: hidden; /* Чтобы вкладки не вылезали за скругление */
+}
+
+/* ==========================================================================
+   НОВЫЙ БЛОК: СТИЛИ ДЛЯ ТАБОВ (ВКЛАДОК)
+   ========================================================================== */
+.wrapper .tabs {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.wrapper .tabs h3 {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.wrapper .tabs h3 a {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    background-color: rgb(248, 248, 248);
+    transition: all 0.3s ease;
+}
+
+/* Стиль для активного таба */
+.wrapper .tabs h3 a.active {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0); /* Подчеркивание активной вкладки */
+}
+
+/* Логика скрытия/показа контента */
+.tabs-content div[id$="tab-content"] {
+    display: none; 
+}
+
+.tabs-content .active {
+    display: block !important; 
+}
+/* ========================================================================== */
+
+.wrapper .input_box input {
+    width: 100%; /* Увеличили до 100%, чтобы инпуты были по ширине контента */
+    height: 35px;
+    margin: 10px 0 20px 0;
+    border: 1px solid transparent;   
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244);
+    padding: 0 10px; /* Добавили внутренний отступ для текста */
+    outline: none;
+}
+
+/* Эффект при клике на инпут */
+.wrapper .input_box input:focus {
+    border-color: rgb(200, 200, 200);
+}
+
+.butt {
+    width: 100%; /* Увеличили до 100%, чтобы кнопка стояла ровно */
+    height: 35px; /* Чуть увеличили высоту для удобства */
+    border: none; 
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.2s ease;
+}
+
+.butt:hover {
+    background-color: rgb(40, 40, 40); /* Эффект при наведении на кнопку */
+}
+
+.attention {
+    width: 100%; /* Увеличили до 100% */
+    border-radius: 5px;
+    color: rgb(69, 98, 204);
+    background-color: rgb(228, 243, 255);
+    margin: 25px 0 0 0; /* Сместили вниз формы */
+    padding: 15px; /* Добавили закрывающие скобки и внутренний отступ */
+    font-size: 14px;
+}
+
+.attention h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+
+    </style>
+    <div class="wrapper form-wrap"> <!-- Добавили класс form-wrap для совместимости со стилями -->
+    <div class="tabs">
+        <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+        <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
+    </div>
+
+    
+<div class="tabs-content">
+
+    <!-- LOGIN -->
+    <div id="login-tab-content" class="active">
+        <form id="login-form">
+
+            <h1>University Email</h1>
+            <div class="input_box">
+                <input type="email" id="login-email"
+                    class="input"
+                    placeholder="student@astanait.edu.kz"
+                    required>
+            </div>
+
+            <h1>Password</h1>
+            <div class="input_box">
+                <input type="password" id="login-password"
+                    class="input"
+                    placeholder="Password"
+                    required>
+            </div>
+
+            <button type="submit" class="button butt">Login</button>
+        </form>
+    </div>
+
+    <!-- SIGN UP -->
+    <div id="signup-tab-content">
+        <form id="signup-form">
+
+            <h1>Full Name</h1>
+            <div class="input_box">
+                <input type="text" id="signup-name"
+                    class="input"
+                    placeholder="Your full name"
+                    required>
+            </div>
+
+            <h1>University Email</h1>
+            <div class="input_box">
+                <input type="email" id="signup-email"
+                    class="input"
+                    placeholder="student@astanait.edu.kz"
+                    required>
+            </div>
+
+            <h1>Student ID</h1>
+            <div class="input_box">
+                <input type="text" id="signup-student-id"
+                    class="input"
+                    placeholder="123456"
+                    required>
+            </div>
+
+            <h1>Create Password</h1>
+            <div class="input_box">
+                <input type="password" id="signup-password"
+                    class="input"
+                    placeholder="Create password"
+                    minlength="8"
+                    required>
+            </div>
+
+            <button type="submit" class="button butt">Sign Up</button>
+        </form>
+    </div>
+
+</div>
+
+<p id="auth-message"></p>
+
+
+    <!-- Этот блок будет виден всегда под табами -->
+    <div class="attention">
+        <h3>Verified Community</h3>
+        <p>Only verified university students can access this platform to ensure a safe and trustworthy environment.</p>
+    </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Находим все ссылки внутри блока с табами
+    const tabLinks = document.querySelectorAll(".tabs a");
+    
+    tabLinks.forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault(); // Отменяем стандартный переход по ссылке-якорю
+
+            // 1. Убираем класс 'active' у всех вкладок (ссылок)
+            tabLinks.forEach(tab => tab.classList.remove("active"));
+            // Добавляем класс 'active' той, на которую кликнули
+            this.classList.add("active");
+
+            // 2. Скрываем все блоки с контентом форм
+            const tabContents = document.querySelectorAll(".tabs-content > div");
+            tabContents.forEach(content => {
+                content.style.display = "none";
+                content.classList.remove("active");
+            });
+
+            // 3. Находим нужный блок по id из атрибута href (например, #login-tab-content)
+            const targetId = this.getAttribute("href");
+            const targetContent = document.querySelector(targetId);
+            
+            if (targetContent) {
+                targetContent.style.display = "block"; // Показываем нужную форму
+                targetContent.classList.add("active");
+            }
+        });
+    });
+});</script>
+    
+<!-- Supabase library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Your Supabase connection -->
+<script src="supabase.js"></script>
+
+<!-- Authentication -->
+<script src="auth.js"></script>
+
+</body>
+</html>

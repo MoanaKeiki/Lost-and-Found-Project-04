@@ -1,0 +1,227 @@
+
+.profile-card { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    background:linear-gradient(to right, rgb(19, 130, 227), rgb(176, 242, 255),rgb(64, 224, 197)); 
+    padding: 30px; border-radius: 12px; color: white; 
+    font-family: sans-serif; 
+    max-width: 100%; 
+    width: 100vw;
+    box-sizing: border-box;
+    justify-content:flex-start ;
+    }
+ .profile-avatar { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 60px; 
+    height: 60px; 
+    background-color: rgba(255, 255, 255, 0.2); 
+    
+    border-radius: 50px; 
+     flex-shrink: 0;
+     }
+.avatar-icon { 
+    width: 32px; 
+    height: 32px;
+     fill: white; }
+.profile-info { 
+    display: flex; 
+    flex-direction: column; 
+     gap: 6px; }
+ .profile-name { 
+    margin: 0; 
+    font-size: 1.25rem; 
+    font-weight: 600; }
+.profile-email { 
+    margin: 0; 
+    font-size: 0.9rem;
+     opacity: 0.9; }
+
+
+     wrapper .tabs {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.wrapper .tabs h3 {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin: 0; /* Добавил обнуление margin, чтобы h3 не ломал сетку */
+}
+
+.wrapper .tabs h3 a {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    background-color: rgb(248, 248, 248);
+    transition: all 0.3s ease;
+}
+
+/* Стиль для активного таба */
+.wrapper .tabs h3 a.active {
+    color: rgb(0, 0, 0);
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(138, 138, 138); 
+}
+
+/* Логика скрытия/показа контента */
+.tabs-content div[id$="tab-content"] {
+    display: none; 
+}
+
+.tabs-content .active {
+    display: block !important; 
+}
+.items {
+    max-width: 100%; 
+    width: 100%;
+    margin: 40px auto; 
+    background: #ffffff;
+    border: 1px solid rgb(220, 220, 220); 
+    border-radius: 12px; 
+    padding: 24px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    font-family: sans-serif;
+    box-sizing: border-box;
+
+    /* 🆕 ДОБАВЛЯЕМ СЮДА: заставляем карточки внутри идти строго друг за другом */
+    display: flex;
+    flex-direction: column; 
+}
+
+/* 2. 🔄 ПЕРЕИМЕНОВАНО: Сама карточка отдельной вещи */
+.item-card {
+    display: flex;
+    justify-content: space-between; /* Текст слева, картинка строго справа */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #eef0f2;
+    border-radius: 10px;
+    margin-bottom: 12px; /* Отступ между карточками, чтобы они не слипались */
+    box-sizing: border-box;
+}
+
+/* --- Дальше ваш код остается без изменений --- */
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    flex-grow: 1; 
+}
+/* ... все остальные ваши стили (.item-header, .item-title и т.д.) ... */
+
+
+/* Контейнер для всего текстового блока */
+
+/* Верхняя строка: бейджи и название в один ряд */
+.item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Расстояние между бейджами и текстом Phone 13 */
+    flex-wrap: wrap; /* Чтобы на мобильных текст не вылезал */
+}
+
+/* Стили заголовка предмета */
+.item-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: sans-serif;
+}
+
+/* Средняя строка: Локация и время */
+.item-meta {
+    font-size: 13px; /* Делаем шрифт поменьше */
+    color: #757575; /* Серый цвет текста */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Точка-разделитель между локацией и временем */
+.meta-dot {
+    color: #b0b0b0;
+}
+
+/* Нижняя строка: Просмотры и ответы */
+.item-stats {
+    font-size: 12px;
+    color: #9e9e9e; /* Еще чуть светлее для второстепенных данных */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px; /* Дополнительный микро-отступ сверху */
+}
+
+.stat-divider {
+    margin: 0 6px;
+    color: #e0e0e0;
+}
+
+.stat-icon {
+    font-size: 13px;
+}
+
+
+.item-img {
+    position: static !important; /* Отменяет любое абсолютное/фиксированное позиционирование */
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    flex-shrink: 0; /* Не дает картинке сжиматься */
+    margin-left: 16px;
+}
+
+/* Стили, которые включатся ТОЛЬКО если картинка не загрузилась */
+.item-img.broken {
+    position: relative;
+    background-color: #f0f0f0; /* Серый фон вместо картинки */
+    border: 1px dashed #ccc; /* Пунктирная рамка */
+}
+
+/* Прячем стандартную браузерную иконку "сломанного файла" */
+.item-img.broken::before {
+    /* Можно вставить любой смайлик или текст, например "Нет фото" */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+form {
+  position: fixed;   
+  
+  bottom: 60px;       
+  left: 0;           
+   max-width: 100%; 
+    width: 100vw;   
+  margin: 0;         
+   
+  box-sizing: border-box;
+}
+
+.butt {
+  max-width: 100%;    
+   width: 100vw;      
+  background-color: rgb(227, 44, 62); 
+  color: white;       
+  border: none;   
+  border-radius: 10px;    
+  padding: 10px 0;    
+  font-size: 16px;    
+  cursor: pointer;    
+  display: block;    
+  box-sizing: border-box;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="report.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <header class="main-header">
+  <!-- Логотип + Текст слева -->
+  <div class="header-logo">
+    <img src="logo.jpg" alt="Логотип"> <!-- Ваша картинка -->
+    <span class="logo-text">Lost & Found</span> <!-- 👈 Новый текст -->
+  </div>
+  
+  <!-- Уведомления справа -->
+   <!-- Уведомления справа -->
+  <button id="notificationBtn" class="notification-btn">
+    🔔
+    <span class="notification-count">0</span>
+</button>
+</header>
+
+<form id="report-form">
+    <h2 class="box-title">My items</h2>
+
+    <div class="status-selection">
+    <p>What do you want to report?</p>
+
+    <div class="status-options">
+        <label class="status-option">
+            <input type="radio" name="item-status"
+                   value="lost" checked>
+            <span class="lost-option">LOST</span>
+        </label>
+
+        <label class="status-option">
+            <input type="radio" name="item-status"
+                   value="found">
+            <span class="found-option">FOUND</span>
+        </label>
+    </div>
+</div>
+    <div class="items">
+        <p>Basic Information</p>
+        
+
+
+
+        
+
+        <div class="item-info">
+            <h1>Item Title*</h1>
+            <div class="input_box">
+                <input class="input" id="item-title"
+                       placeholder="Enter item name" required>
+            </div>
+
+            <h1>Category*</h1>
+            <div class="input_box">
+                <select class="input" id="item-category" required>
+                    <option value="" disabled selected>Select category</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="documents">Documents</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="keys">Keys</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <h1>Description</h1>
+            <div class="input_box">
+                <textarea class="input" id="item-description"
+                          placeholder="Describe the item"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="items">
+        <p>Location</p>
+
+        <div class="item-info">
+            <h1>Where did you see it?*</h1>
+            <div class="input_box">
+                <select class="input" id="item-location" required>
+                    <option value="" disabled selected>Select location</option>
+                    <option value="Library - 1st Floor">Library - 1st Floor</option>
+                    <option value="Gym">Gym</option>
+                    <option value="Openspace - 1st Floor">Openspace - 1st Floor</option>
+                    <option value="Openspace - 3rd Floor">Openspace - 3rd Floor</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+    </div>
+       <div class="form-group">
+    <label for="contact-method">Contact Method</label>
+
+    <select id="contact-method" required>
+        <option value="">Choose contact method</option>
+        <option value="telegram">Telegram</option>
+        <option value="whatsapp">WhatsApp</option>
+        <option value="phone">Phone</option>
+        <option value="email">Email</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="contact-value">Your Contact</label>
+
+    <input
+        type="text"
+        id="contact-value"
+        placeholder="@username or phone number"
+        required
+    >
+</div>
+
+    <div class="items">
+        <p>Photos</p>
+        <span class="badge Lost">Up to 5 photos</span>
+
+        <div class="item-info">
+            <div class="photo-upload-container">
+                <label for="file-input" class="upload-btn">
+                    <span class="upload-icon">📸</span>
+                    <span>Click to upload</span>
+                </label>
+
+                <input type="file" id="file-input"
+                       accept="image/*" multiple>
+
+                <div id="preview-container"
+                     class="preview-container"></div>
+            </div>
+        </div>
+    </div>
+
+
+   
+<button type="submit" class="btn-submit" id="submit-report">
+    Submit Report
+</button>
+
+<p id="report-message"></p>
+</form>
+
+
+
+    <nav class="bottom-nav">
+  <a href="mainpage.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">🔍</span>
+    <span class="nav-label">Search</span>
+  </a>
+  <a href="report.html" class="nav-item active" onclick="setActive(this)">
+    <span class="nav-icon">➕</span>
+    <span class="nav-label">Report</span>
+  </a>
+  <a href="profile.html" class="nav-item" onclick="setActive(this)">
+    <span class="nav-icon">👤</span>
+    <span class="nav-label">Profile</span>
+  </a>
+</nav>
+<div class="notification-panel" id="notificationPanel">
+    <div class="notification-header">
+        <h3>Notifications</h3>
+        <button id="closeNotifications" class="close-notifications">&times;</button>
+    </div>
+
+    <div class="notification-list">
+        
+       
+        <div class="notification-item">
+            <div class="notification-icon">🔔</div>
+            <div class="notification-text">
+                <h4>Welcome!</h4>
+                <p>Welcome to Lost and Found.</p>
+                <span>Yesterday</span>
+            </div>
+        </div>
+    </div>
+</div>
+<audio id="success-sound" src="sounds-success.mp3" preload="auto"></audio>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./supabase.js"></script>
+<script src="./index.js"></script>
+</body>
+</body>
+</html>

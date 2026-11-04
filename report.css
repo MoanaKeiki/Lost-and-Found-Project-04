@@ -1,0 +1,229 @@
+h1{
+     font-family: inherit;
+    font-size: 16px;
+}
+
+/* Общий стиль для всех полей */
+.input_box {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input_box .input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    font-family: inherit;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Item Title */
+input.input {
+    height: 45px;
+}
+
+/* Category */
+select.input {
+    height: 45px;
+    cursor: pointer;
+}
+
+/* Description */
+textarea.input {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* Эффект при нажатии на поле */
+.input_box .input:focus {
+    border-color: #63c7b5;
+    box-shadow: 0 0 5px rgba(140, 177, 212, 0.3);
+}
+
+/* Цвет подсказки */
+.input_box .input::placeholder {
+    color: #999;
+}
+
+
+
+.photo-upload-container {
+    margin: 15px 0;
+    font-family: sans-serif;
+}
+
+/* Стилизация кнопки выбора файлов */
+.upload-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    background: #f9f9f9;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.upload-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.upload-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+/* Сетка для отображения выбранных фото */
+.preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Контейнер для одной миниатюры */
+.preview-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+/* Кнопка удаления отдельного фото (крестик) */
+.remove-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+
+.upload-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    background: #f9f9f9;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.upload-btn:hover {
+    background: #f0f0f0;
+    border-color: #999;
+}
+
+.upload-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+#submit-report {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 60px 0;
+    background-color: #963535;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit-report:hover {
+    opacity: 0.85;
+}
+
+#submit-report:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.status-selection {
+    margin: 20px 0;
+}
+
+.status-options {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.status-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.status-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-option span {
+    display: block;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.lost-option {
+    color: #963535;
+}
+
+.found-option {
+    color: #218838;
+}
+
+.status-option input:checked + .lost-option {
+    background: #963535;
+    color: white;
+    border-color: #963535;
+}
+
+.status-option input:checked + .found-option {
+    background: #218838;
+    color: white;
+    border-color: #218838;
+}
+
+.status-option input:focus-visible + span {
+    outline: 2px solid #333;
+    outline-offset: 3px;
+}
+
