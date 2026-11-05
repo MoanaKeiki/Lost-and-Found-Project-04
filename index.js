@@ -94,12 +94,28 @@ var fileName = Date.now() + '.' + extension;
     if (error) {
         throw error;
     }
+//hteeeeee
+    var sound = document.getElementById('success-sound');
+    if (sound) {
+        sound.load(); // Подгружаем трек заранее
+    }
+     if (error) {
+        throw error;
+    }
 
     message.textContent = 'Report submitted successfully!';
     message.style.color = 'green';
-    var sound = document.getElementById('success-sound');
-    sound.currentTime = 0;
-    sound.play();
+    
+    // 2. Воспроизведение звука
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(function(err) {
+            console.log("Браузер заблокировал звук, пока шла отправка данных:", err);
+        });
+    }
+
+    document.getElementById('report-form').reset();
+
 
     document.getElementById('report-form').reset();
     document.getElementById('preview-container').innerHTML = '';
