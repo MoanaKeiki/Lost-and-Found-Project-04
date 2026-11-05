@@ -119,8 +119,8 @@ var fileName = Date.now() + '.' + extension;
     });
 }
 
-var location = document.getElementById('item-location').value;
-var message = document.getElementById('report-message');
+var itemLocationValue = document.getElementById('item-location')?.value;
+var reportMessageElem = document.getElementById('report-message');
 
-var contactMethod = document.getElementById('contact-method').value;
-var contactValue = document.getElementById('contact-value').value.trim();
+var contactMethodValue = document.getElementById('contact-method')?.value;
+var contactValueText = document.getElementById('contact-value')?.value.trim();
