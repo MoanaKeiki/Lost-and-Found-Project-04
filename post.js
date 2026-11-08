@@ -1,13 +1,12 @@
 
-// Получаем ID объявления из адреса страницы
+ 
 const params = new URLSearchParams(window.location.search);
 const itemId = params.get('id');
-
-// Находим элементы страницы
+ 
 const loading = document.getElementById('post-loading');
 const content = document.getElementById('post-content');
 
-// Загружаем конкретное объявление
+ 
 async function loadPost() {
 
     if (!itemId) {
@@ -25,7 +24,7 @@ async function loadPost() {
 
         if (error) throw error;
 
-        // Показываем информацию
+         
         document.getElementById('post-title').textContent = data.title;
 
         document.getElementById('post-category').textContent =
@@ -40,7 +39,7 @@ async function loadPost() {
         document.getElementById('post-date').textContent =
             new Date(data.created_at).toLocaleDateString();
 
-        // Показываем фотографию
+        
         const img = document.getElementById('post-image');
 
         img.src = data.image_url || 'img/no-image.png';
@@ -49,7 +48,7 @@ async function loadPost() {
             this.src = 'img/no-image.png';
         };
 
-        // Показываем статус
+   
         const status = document.getElementById('post-status');
 
         status.textContent = data.status.toUpperCase();
@@ -57,7 +56,7 @@ async function loadPost() {
         status.classList.add(
             data.status.toLowerCase() === 'found' ? 'Found' : 'Lost'
         );
-        // Contact information
+   
 const contactButton = document.getElementById('contact-button');
 
 const method = data.contact_method;
@@ -92,7 +91,7 @@ if (contactUrl && contact) {
 } else {
     contactButton.style.display = 'none';
 }
-        // Показываем страницу
+ 
         loading.style.display = 'none';
         content.style.display = 'block';
 
