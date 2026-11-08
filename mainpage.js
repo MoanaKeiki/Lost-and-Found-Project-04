@@ -44,7 +44,7 @@ console.log("Окно:", panel);
 console.log("Кнопка закрытия:", closeBtn);
     if (!btn || !panel || !closeBtn) return;
 
-    // Open and close by clicking the bell
+     
     btn.addEventListener('click', (event) => {
         event.stopPropagation();
 
@@ -56,13 +56,13 @@ console.log("Кнопка закрытия:", closeBtn);
         );
     });
 
-    // Close using the X button
+    
     closeBtn.addEventListener('click', () => {
         panel.classList.remove('show');
         btn.setAttribute('aria-expanded', 'false');
     });
 
-    // Close when clicking outside
+ 
     document.addEventListener('click', (event) => {
         if (
             !panel.contains(event.target) &&
@@ -73,7 +73,7 @@ console.log("Кнопка закрытия:", closeBtn);
         }
     });
 
-    // Close with Escape
+     
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             panel.classList.remove('show');
@@ -93,17 +93,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            // Переключаем активный класс у кнопок
+             
             buttons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // Получаем значение фильтра из нажатой кнопки (например: electronic, keys)
+             
             const filterValue = button.getAttribute('data-filter');
             console.log("Нажата кнопка категории:", filterValue);
 
-            // Фильтруем карточки
+         
             items.forEach(item => {
-                // Карточки теперь должны иметь атрибут data-category
+                
                 const itemCategory = item.getAttribute('data-category');
                 
                 if (filterValue === 'all' || itemCategory === filterValue) {
