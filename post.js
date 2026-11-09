@@ -56,8 +56,65 @@ async function loadPost() {
         status.classList.add(
             data.status.toLowerCase() === 'found' ? 'Found' : 'Lost'
         );
-   
+
 const contactButton = document.getElementById('contact-button');
+
+const method = (data.contact_method || '').toLowerCase();
+const contact = (data.contact_value || '').trim();
+
+let contactUrl = '';
+let buttonText = '';
+
+if (method === 'telegram') {
+
+    const username = contact.replace(/^@/, '');
+
+    contactUrl = 'https://t.me/' + username;
+    buttonText = 'Contact via Telegram';
+
+}
+
+else if (method === 'whatsapp') {
+
+    const phone = contact.replace(/\D/g, '');
+
+    contactUrl = 'https://wa.me/' + phone;
+    buttonText = 'Contact via WhatsApp';
+
+}
+
+else if (method === 'email') {
+
+    contactUrl = 'mailto:' + contact;
+    buttonText = 'Send Email';
+
+}
+
+else if (method === 'phone') {
+
+    contactUrl = 'tel:' + contact.replace(/[^\d+]/g, '');
+    buttonText = 'Call Owner';
+
+}
+
+if (contactUrl) {
+
+    contactButton.href = contactUrl;
+    contactButton.textContent = buttonText;
+    contactButton.style.display = 'inline-block';
+
+    if (method === 'telegram' || method === 'whatsapp') {
+        contactButton.target = '_blank';
+    } else {
+        contactButton.removeAttribute('target');
+    }
+
+} else {
+
+    contactButton.style.display = 'none';
+
+}
+
 
 const method = data.contact_method;
 const contact = data.contact_value;
