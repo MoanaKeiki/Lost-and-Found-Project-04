@@ -20,7 +20,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: white;
-    font-family: sans-serif; /* Для лучшего отображения */
+    font-family: sans-serif; 
 }
 
 .wrapper h1 {
@@ -31,15 +31,12 @@ body {
     width: 420px;
     background-color: white;
     color: rgb(100, 100, 100);
-    border: 1px solid rgb(220, 220, 220); /* Сделали рамку мягче */
+    border: 1px solid rgb(220, 220, 220); 
     border-radius: 30px;
     padding: 30px;
-    overflow: hidden; /* Чтобы вкладки не вылезали за скругление */
+    overflow: hidden; 
 }
 
-/* ==========================================================================
-   НОВЫЙ БЛОК: СТИЛИ ДЛЯ ТАБОВ (ВКЛАДОК)
-   ========================================================================== */
 .wrapper .tabs {
     overflow: hidden;
     margin-bottom: 20px;
@@ -63,15 +60,13 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Стиль для активного таба */
 .wrapper .tabs h3 a.active {
     color: rgb(0, 0, 0);
     background-color: white;
     font-weight: bold;
-    border-bottom: 2px solid rgb(0, 0, 0); /* Подчеркивание активной вкладки */
+    border-bottom: 2px solid rgb(0, 0, 0); 
 }
 
-/* Логика скрытия/показа контента */
 .tabs-content div[id$="tab-content"] {
     display: none; 
 }
@@ -79,27 +74,25 @@ body {
 .tabs-content .active {
     display: block !important; 
 }
-/* ========================================================================== */
 
 .wrapper .input_box input {
-    width: 100%; /* Увеличили до 100%, чтобы инпуты были по ширине контента */
+    width: 100%; 
     height: 35px;
     margin: 10px 0 20px 0;
     border: 1px solid transparent;   
     border-radius: 5px;
     background-color: rgb(244, 244, 244);
-    padding: 0 10px; /* Добавили внутренний отступ для текста */
+    padding: 0 10px; 
     outline: none;
 }
 
-/* Эффект при клике на инпут */
 .wrapper .input_box input:focus {
     border-color: rgb(200, 200, 200);
 }
 
 .butt {
-    width: 100%; /* Увеличили до 100%, чтобы кнопка стояла ровно */
-    height: 35px; /* Чуть увеличили высоту для удобства */
+    width: 100%; 
+    height: 35px; 
     border: none; 
     border-radius: 5px;
     color: white;
@@ -111,16 +104,16 @@ body {
 }
 
 .butt:hover {
-    background-color: rgb(40, 40, 40); /* Эффект при наведении на кнопку */
+    background-color: rgb(40, 40, 40); 
 }
 
 .attention {
-    width: 100%; /* Увеличили до 100% */
+    width: 100%; 
     border-radius: 5px;
     color: rgb(69, 98, 204);
     background-color: rgb(228, 243, 255);
-    margin: 25px 0 0 0; /* Сместили вниз формы */
-    padding: 15px; /* Добавили закрывающие скобки и внутренний отступ */
+    margin: 25px 0 0 0; 
+    padding: 15px; 
     font-size: 14px;
 }
 
@@ -129,18 +122,15 @@ body {
     margin-bottom: 5px;
 }
 
-
     </style>
-    <div class="wrapper form-wrap"> <!-- Добавили класс form-wrap для совместимости со стилями -->
+    <div class="wrapper form-wrap"> 
     <div class="tabs">
         <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
         <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
     </div>
-
     
 <div class="tabs-content">
-
-    <!-- LOGIN -->
+    
     <div id="login-tab-content" class="active">
         <form id="login-form">
 
@@ -164,7 +154,7 @@ body {
         </form>
     </div>
 
-    <!-- SIGN UP -->
+  
     <div id="signup-tab-content">
         <form id="signup-form">
 
@@ -209,8 +199,6 @@ body {
 
 <p id="auth-message"></p>
 
-
-    <!-- Этот блок будет виден всегда под табами -->
     <div class="attention">
         <h3>Verified Community</h3>
         <p>Only verified university students can access this platform to ensure a safe and trustworthy environment.</p>
@@ -218,44 +206,42 @@ body {
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Находим все ссылки внутри блока с табами
+    
     const tabLinks = document.querySelectorAll(".tabs a");
     
     tabLinks.forEach(link => {
         link.addEventListener("click", function(e) {
-            e.preventDefault(); // Отменяем стандартный переход по ссылке-якорю
+            e.preventDefault(); 
 
-            // 1. Убираем класс 'active' у всех вкладок (ссылок)
+            
             tabLinks.forEach(tab => tab.classList.remove("active"));
-            // Добавляем класс 'active' той, на которую кликнули
+            
             this.classList.add("active");
 
-            // 2. Скрываем все блоки с контентом форм
+           
             const tabContents = document.querySelectorAll(".tabs-content > div");
             tabContents.forEach(content => {
                 content.style.display = "none";
                 content.classList.remove("active");
             });
 
-            // 3. Находим нужный блок по id из атрибута href (например, #login-tab-content)
+            
             const targetId = this.getAttribute("href");
             const targetContent = document.querySelector(targetId);
             
             if (targetContent) {
-                targetContent.style.display = "block"; // Показываем нужную форму
+                targetContent.style.display = "block"; 
                 targetContent.classList.add("active");
             }
         });
     });
 });</script>
     
-<!-- Supabase library -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- Your Supabase connection -->
 <script src="supabase.js"></script>
 
-<!-- Authentication -->
 <script src="auth.js"></script>
 
 </body>
