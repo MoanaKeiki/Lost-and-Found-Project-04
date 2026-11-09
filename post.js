@@ -116,8 +116,7 @@ if (contactUrl) {
 }
 
 
-const method = data.contact_method;
-const contact = data.contact_value;
+
 
 let contactUrl = '';
 let buttonText = '';
