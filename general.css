@@ -1,6 +1,4 @@
-/* ========================================================
-                      header
-   ======================================================== */
+
 .main-header {
   position: fixed;
   top: 0;
@@ -17,36 +15,32 @@
   z-index: 9999;
 }
 
-/* 🔄 ИЗМЕНЕНО: Контейнер для логотипа и текста */
 .header-logo {
-  display: flex;          /* Выстраивает картинку и текст в одну строку */
-  align-items: center;    /* Центрирует их по вертикали друг относительно друга */
-  gap: 10px;              /* Расстояние между картинкой и текстом */
+  display: flex;         
+  align-items: center;    
+  gap: 10px;              
 }
 
-/* Стили для картинки логотипа */
 .header-logo img {
   height: 40px;
   width: auto;
   display: block;
 }
 
-/* 🆕 ДОБАВЛЕНО: Стили для текста Lost & Found */
+
 .logo-text {
-  font-size: 18px;        /* Размер шрифта */
-  font-weight: bold;      /* Жирный текст */
-  color: #333333;         /* Темно-серый цвет текста */
-  font-family: sans-serif;/* Стандартный аккуратный шрифт (можно заменить на свой) */
+  font-size: 18px;        
+  font-weight: bold;      
+  color: #333333;         
+  font-family: sans-serif;
 }
 
-/* Стили для блока уведомлений */
 .header-notifications {
   position: relative;
   cursor: pointer;
   font-size: 24px;
 }
 
-/* Красный индикатор уведомлений */
 .notification-badge {
   position: absolute;
   top: -4px;
@@ -68,12 +62,6 @@ body {
   margin: 0;
 }
 
-
-
-/* ========================================================
-                    нижняя навигация
-   ======================================================== */
-
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -88,7 +76,7 @@ body {
   z-index: 1000;
 }
 
-/* Элемент вкладки */
+
 .nav-item {
   display: flex;
   flex-direction: column;
@@ -103,20 +91,18 @@ body {
   transition: color 0.2s ease;
 }
 
-/* Иконка */
+
 .nav-icon {
   font-size: 20px;
   margin-bottom: 2px;
 }
 
-/* Активное (нажатое) состояние */
+
 .nav-item.active {
-  color: #007aff; /* Синий цвет в стиле iOS */
+  color: #007aff; 
 }
 
-/* ========================================================
-                    badges
-   ======================================================== */
+
    .profile-badges { 
     
     display: flex; 
@@ -155,17 +141,14 @@ body {
     color: white;
 }
 
-/* ========================================================
-                    notification
-   ======================================================== */
 
-/* Notification button */
+
 .notification-btn {
     position: relative;
     cursor: pointer;
 }
 
-/* Small notification counter */
+
 .notification-count {
     position: absolute;
     top: -5px;
@@ -181,7 +164,7 @@ body {
     justify-content: center;
 }
 
-/* Notification popup */
+
 .notification-panel {
     position: fixed;
     top: 75px;
@@ -202,7 +185,7 @@ body {
     display: block;
 }
 
-/* Header */
+
 .notification-header {
     display: flex;
     align-items: center;
@@ -224,7 +207,7 @@ body {
     color: #777;
 }
 
-/* Notification list */
+
 .notification-item {
     display: flex;
     gap: 12px;
@@ -279,23 +262,23 @@ body {
 
 
 .card-box {
-    max-width: 100%; /* Ограничиваем ширину коробки, чтобы она не была на весь экран */
+    max-width: 100%; 
     width: 100%;
-    margin: 40px auto; /* Центрируем коробку на странице */
+    margin: 40px auto; 
     background: #ffffff;
-    border: 1px solid rgb(220, 220, 220); /* Рамка вокруг коробки */
-    border-radius: 12px; /* Красивые скругленные углы */
-    padding: 24px; /* Внутренние отступы от краев коробки */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Легкая тень для эффекта объема */
+    border: 1px solid rgb(220, 220, 220); 
+    border-radius: 12px; 
+    padding: 24px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
     font-family: sans-serif;
     box-sizing: border-box;
 }
 
-/* Заголовок "My items" в левом верхнем углу коробки */
+
 .box-title {
-    margin: 0 0 20px 0; /* Отступ только снизу, чтобы отодвинуть табы */
+    margin: 0 0 20px 0; 
     font-size: 22px;
     font-weight: 600;
     color: rgb(30, 30, 30);
-    text-align: left; /* Строго слева */
+    text-align: left; 
 }
