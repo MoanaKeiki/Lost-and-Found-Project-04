@@ -70,7 +70,7 @@ async function loadPost() {
         const method = String(data.contact_method || '').toLowerCase().trim();
         const contact = String(data.contact_value || '').trim();
 
-        let contactUrl = '';
+        let contactUrl;//----------------------- = '';
         let buttonText = '';
 
 
