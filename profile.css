@@ -50,7 +50,7 @@
     float: left;
     width: 50%;
     text-align: center;
-    margin: 0; 
+    margin: 0; /* Добавил обнуление margin, чтобы h3 не ломал сетку */
 }
 
 .wrapper .tabs h3 a {
@@ -64,7 +64,7 @@
     transition: all 0.3s ease;
 }
 
-
+/* Стиль для активного таба */
 .wrapper .tabs h3 a.active {
     color: rgb(0, 0, 0);
     background-color: white;
@@ -72,7 +72,7 @@
     border-bottom: 2px solid rgb(138, 138, 138); 
 }
 
-
+/* Логика скрытия/показа контента */
 .tabs-content div[id$="tab-content"] {
     display: none; 
 }
@@ -92,40 +92,45 @@
     font-family: sans-serif;
     box-sizing: border-box;
 
-     
+    /* 🆕 ДОБАВЛЯЕМ СЮДА: заставляем карточки внутри идти строго друг за другом */
     display: flex;
     flex-direction: column; 
 }
 
- 
+/* 2. 🔄 ПЕРЕИМЕНОВАНО: Сама карточка отдельной вещи */
 .item-card {
     display: flex;
-    justify-content: space-between; 
-    align-items: flex-start;  
+    justify-content: space-between; /* Текст слева, картинка строго справа */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
     padding: 16px;
     background-color: #ffffff;
     border: 1px solid #eef0f2;
     border-radius: 10px;
-    margin-bottom: 12px;  
+    margin-bottom: 12px; /* Отступ между карточками, чтобы они не слипались */
     box-sizing: border-box;
 }
 
- 
+/* --- Дальше ваш код остается без изменений --- */
 .item-info {
     display: flex;
     flex-direction: column;
     gap: 8px; 
     flex-grow: 1; 
 }
+/* ... все остальные ваши стили (.item-header, .item-title и т.д.) ... */
 
+
+/* Контейнер для всего текстового блока */
+
+/* Верхняя строка: бейджи и название в один ряд */
 .item-header {
     display: flex;
     align-items: center;
-    gap: 8px;  
-    flex-wrap: wrap;  
+    gap: 8px; /* Расстояние между бейджами и текстом Phone 13 */
+    flex-wrap: wrap; /* Чтобы на мобильных текст не вылезал */
 }
 
- 
+/* Стили заголовка предмета */
 .item-title {
     margin: 0;
     font-size: 16px;
@@ -134,28 +139,29 @@
     font-family: sans-serif;
 }
 
- 
+/* Средняя строка: Локация и время */
 .item-meta {
-    font-size: 13px;  
-    color: #757575;  
+    font-size: 13px; /* Делаем шрифт поменьше */
+    color: #757575; /* Серый цвет текста */
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
- 
+/* Точка-разделитель между локацией и временем */
 .meta-dot {
     color: #b0b0b0;
 }
 
- 
+/* Нижняя строка: Просмотры и ответы */
 .item-stats {
     font-size: 12px;
-    color: #9e9e9e;  
+    color: #9e9e9e; /* Еще чуть светлее для второстепенных данных */
     display: flex;
     align-items: center;
     gap: 4px;
-    margin-top: 2px;  
+    margin-top: 2px; /* Дополнительный микро-отступ сверху */
+}
 
 .stat-divider {
     margin: 0 6px;
@@ -168,25 +174,26 @@
 
 
 .item-img {
-    position: static !important;  
+    position: static !important; /* Отменяет любое абсолютное/фиксированное позиционирование */
     width: 70px;
     height: 70px;
     object-fit: cover;
     border-radius: 6px;
     display: block;
-    flex-shrink: 0; 
+    flex-shrink: 0; /* Не дает картинке сжиматься */
     margin-left: 16px;
 }
- 
+
+/* Стили, которые включатся ТОЛЬКО если картинка не загрузилась */
 .item-img.broken {
     position: relative;
-    background-color: #f0f0f0;  
-    border: 1px dashed #ccc;  
+    background-color: #f0f0f0; /* Серый фон вместо картинки */
+    border: 1px dashed #ccc; /* Пунктирная рамка */
 }
 
- 
+/* Прячем стандартную браузерную иконку "сломанного файла" */
 .item-img.broken::before {
-    
+    /* Можно вставить любой смайлик или текст, например "Нет фото" */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -218,7 +225,8 @@ form {
   display: block;    
   box-sizing: border-box;
 }
- 
+/*jjjj
+/* Сыртқы контейнер */
 .notifications-section {
   width: 100%;
   margin: 20px 0;
@@ -231,14 +239,14 @@ form {
   margin-bottom: 12px;
 }
 
- 
+/* Тік тізім (Vertical Column) */
 .notifications-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;  
+  gap: 10px; /* Элементтердің ара қашықтығы */
 }
 
- 
+/* Жеке хабарлама жолы */
 .notif-item {
   display: flex;
   justify-content: space-between;
@@ -254,7 +262,7 @@ form {
   background-color: #f1f3f5;
 }
 
- 
+/* Мәтін бөлігі */
 .notif-text h4 {
   font-size: 14px;
   font-weight: 600;
@@ -267,7 +275,8 @@ form {
   color: #6c757d;
   margin: 0;
 }
- 
+
+/* Қосқыш (Toggle Switch) стилі - 9-суреттегідей */
 .switch {
   position: relative;
   display: inline-block;
@@ -304,22 +313,24 @@ form {
 }
 
 input:checked + .slider {
-  background-color: #50aaaa;  
+  background-color: #50aaaa; /* Белсенді кезде қара түс */
 }
 
 input:checked + .slider:before {
   transform: translateX(20px);
 }
- 
+
+/* Перезапишем свойства более агрессивно */
 .safety-column {
   display: flex !important;
-  flex-direction: row !important;         
-  justify-content: space-between !important;  
-  align-items: stretch;                  
+  flex-direction: row !important;         /* Точно в ряд */
+  justify-content: space-between !important; /* Точно по бокам */
+  align-items: stretch;                   /* Выравнивание по высоте */
   gap: 16px;
   width: 100%;
 }
- 
+
+/* Карточкам явно говорим занять место */
 .safety-card {
   display: flex;
   flex-direction: column;
@@ -329,7 +340,8 @@ input:checked + .slider:before {
   border: 1px solid #e9ecef;
   border-radius: 12px;
   transition: all 0.2s ease;
-   
+  
+  /* Добавляем эти три строки, чтобы заставить их встать в ряд */
   flex: 1 1 0% !important; 
   min-width: 0; 
   box-sizing: border-box;
@@ -338,7 +350,8 @@ input:checked + .slider:before {
 .safety-card:hover {
   border-color: #dee2e6;
 }
- 
+
+/* Тақырып бөлігі */
 .safety-title {
   display: flex;
   align-items: center;
@@ -347,14 +360,16 @@ input:checked + .slider:before {
   font-weight: 600;
   color: #212529;
 }
- 
+
+/* Сипаттама мәтіні */
 .safety-desc {
   font-size: 13px;
   color: #6c757d;
   line-height: 1.4;
   margin: 0;
 }
- 
+
+/* Сілтеме */
 .safety-link {
   font-size: 13px;
   color: #1673ff;
@@ -366,6 +381,8 @@ input:checked + .slider:before {
 .safety-link:hover {
   text-decoration: underline;
 }
+
+
 .bottom-nav {
 display: flex;
 justify-content: space-around;
@@ -414,4 +431,3 @@ transition: color 0.3s ease;
 .bottom-nav .nav-item:hover {
 color: #5047f9; 
 }
-
