@@ -366,5 +366,52 @@ input:checked + .slider:before {
 .safety-link:hover {
   text-decoration: underline;
 }
+.bottom-nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+background-color: #ffffff; 
+padding: 10px 0;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+.bottom-nav .nav-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-decoration: none;
+color: #666;
+transition: color 0.3s ease;
+}
+.bottom-nav .nav-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+}
+.bottom-nav .nav-icon img {
+width: 28px; 
+height: 28px;
+object-fit: contain;
+transition: filter 0.3s ease;
+}
 
+.bottom-nav .nav-item:hover .nav-icon {
+transform: scale(0.85); 
+filter: drop-shadow(0 0 8px rgba(85, 101, 247, 0.8)); 
+}
+
+.bottom-nav .nav-label {
+font-size: 12px;
+margin-top: 4px;
+transition: color 0.3s ease;
+}
+
+.bottom-nav .nav-item.active,
+.bottom-nav .nav-item:hover {
+color: #5047f9; 
+}
 
