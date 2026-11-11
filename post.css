@@ -41,12 +41,12 @@
     margin-top: 25px;
 }
 .divs{
-    width: 99%; /* Увеличили до 100% */
+    width: 99%; 
     border-radius: 10px;
   
     border:2px solid ;
-    margin: 25px 0 0 0; /* Сместили вниз формы */
-    padding: 15px; /* Добавили закрывающие скобки и внутренний отступ */
+    margin: 25px 0 0 0; 
+    padding: 15px; 
     font-size: 14px;
     .contact-section {
     margin-top: 30px;
